@@ -4,8 +4,10 @@ function findPairWithSum(numbers, targetSum) {
         const num = numbers[i] // guardo el numero actual del array numbers, para poder operar acontinuacion
         const add = targetSum - num // calculo el complemento que hace falta para alcanzar targetSum
 
-        console.log(num)
-        console.log(add)
+        if (numberToShow[add] !== undefined) {
+            return `The pair of numbers that sum to ${targetSum} is: ${[num, add]}`
+        }
+        console.log([num,add])
 
     }
 }
