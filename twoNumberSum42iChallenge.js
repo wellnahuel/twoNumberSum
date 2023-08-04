@@ -11,13 +11,12 @@ function findPairWithSum(numbers, targetSum) {
 
         numberToShow[num] = true; //si la busqueda fracasa y no se encuentra el complemento, se guarda el num en el objeto con una propiedad true para llevar un registro
         console.log([num,add])
-
-
     }
+    return []  // si el ciclo for no encuentra coincidencias se retorna un arrayvacio
 }
 
-const numbers = [2, 7, 11, 15];
-const targetSum = 9;
+const numbers = [3, 6, 8, 10];
+const targetSum = 15;
 findPairWithSum(numbers, targetSum);
 
 /* const numbers = [2, 7, 11, 15];
