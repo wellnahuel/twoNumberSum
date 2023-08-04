@@ -3,11 +3,15 @@ function findPairWithSum(numbers, targetSum) {
     for (let i=0 ; i < numbers.length; i++) { // recorro el array de numeros
         const num = numbers[i] // guardo el numero actual del array numbers, para poder operar acontinuacion
         const add = targetSum - num // calculo el complemento que hace falta para alcanzar targetSum
-
-        if (numberToShow[add] !== undefined) {
-            return `The pair of numbers that sum to ${targetSum} is: ${[num, add]}`
+        //en este condicional if en el primer ciclo del for no se va a cumplir nunca la condicion ya que el bojeto esta vacio
+        if (numberToShow[add] !== undefined) { //verifico que el numero que me falta para alcanzar targetSum esta en el objeto 
+            return `The pair of numbers that sum to ${targetSum} is: ${[num, add]}` //si encontramos el complemento en el objeto numberToShow, retornamos el par de numeros buscados
         }
         console.log([num,add])
+
+        numberToShow[num] = true; //si la busqueda fracasa y no se encuentra el complemento, se guarda el num en el objeto con una propiedad true para llevar un registro
+        console.log([num,add])
+
 
     }
 }
