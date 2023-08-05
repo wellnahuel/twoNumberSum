@@ -1,18 +1,29 @@
 function nonConstructibleChange(coins) {
+    let sortedCoins = coins.sort((a, b) => a - b);
+    console.log(sortedCoins);
+
     let min = 1; //defino un minimo como referencia
-    for (let i = 0 ; i < coins.length ; i++) { //recorro el array de monedas
-        if (coins[i] <= min) { //si la moneda es menor al minimo entonces a este le sumamos la moneda
-            min = min + coins[i];
+    for (let i = 0 ; i < sortedCoins.length ; i++) { //recorro el array de monedas
+        if (sortedCoins[i] <= min) { //si la moneda es menor al minimo entonces a este le sumamos la moneda
+            min = min + sortedCoins[i];
+            console.log(min)
         }
     }
     //console.log(min)
-    return min; //obtengo 8, por lo que sumo 1+1+2+3=7+1=8, esto lo soluciono ordenando ascendentemente a coins
+    return min; //obtengo 20, por lo que sumo 1+1+2+3+5+7=19+1=20
 }
 
+const coins = [5, 4, 1,1, 3 , 44, 3, 22]
 
-const coins = [5, 7, 1, 1, 2, 3, 22];
+//const coins = [5, 7, 1, 1, 2, 3, 22]; 
 //nonConstructibleChange(coins)
 console.log(nonConstructibleChange(coins));
+
+//Pruebas adicionales exitosas
+//const coins = [5, 4, 1,1, 3 , 44, 3, 22] Salida: 18
+//const coins = [5, 4, 1, 3 , 44, 3, 22] Salida: 2 
+
+
 
 /* 
 
